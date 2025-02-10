@@ -10,7 +10,7 @@
     <h1>Submitted Data</h1>
     <div id="output"></div>
 
-    <toggle>DARK MODE</toggle>
+    <button id="toggle">DARK MODE</button>
 
     <script>
         const params = new URLSearchParams(location.search);
@@ -21,6 +21,6 @@
             outputDiv.innerHTML += `<div class="row"><strong>${key}:</strong> ${value}</div>`;
         });
     </script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>

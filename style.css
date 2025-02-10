@@ -97,7 +97,7 @@ button:hover {
     font-size: 1.2em;
 }
 
-toggle {
+button#toggle {
     position: fixed;
     bottom: 0.5em;
     right: 0.5em;
@@ -107,7 +107,7 @@ toggle {
     border-radius: 0.5em;
 }
 
-toggle:hover {
+button#toggle:hover {
     background-color: var(--bg-color);
     color: var(--txt-color);
     border: solid 1px var(--txt-color);
