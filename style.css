@@ -4,12 +4,11 @@
     --txt-color : #333;
 }
 
-:root[theme='dark']{
+:root[theme='dark'] {
     --bg-color: #333;
     --bg-color2: #555;
     --txt-color: cyan;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -18,27 +17,87 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-
 h1 {
     text-align: center;
-    margin: 0px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 200px; /* Smaller image size */
+    display: block;
+    margin: 20px auto;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    max-width: 400px;
     margin: auto;
-    gap: 10px;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em; /* Bigger form elements */
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: #999;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#output {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
-toggle{
+toggle {
     position: fixed;
     bottom: 0.5em;
     right: 0.5em;
@@ -48,7 +107,7 @@ toggle{
     border-radius: 0.5em;
 }
 
-toggle:hover{
+toggle:hover {
     background-color: var(--bg-color);
     color: var(--txt-color);
     border: solid 1px var(--txt-color);
