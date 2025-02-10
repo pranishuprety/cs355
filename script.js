@@ -2,7 +2,6 @@ const $ = document.querySelector.bind(document);
 
 const toggleBtn = $('#toggle');
 
-// Load the saved dark mode setting
 if (localStorage.getItem('darkMode') === 'enabled') {
     document.documentElement.setAttribute('theme', 'dark');
     toggleBtn.innerText = 'LIGHT MODE';
