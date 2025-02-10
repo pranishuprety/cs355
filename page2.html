@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Submitted Data</h1>
+    <div id="output"></div>
+
+    <toggle>DARK MODE</toggle>
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = '';
+
+        params.forEach((value, key) => {
+            outputDiv.innerHTML += `<div class="row"><strong>${key}:</strong> ${value}</div>`;
+        });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>

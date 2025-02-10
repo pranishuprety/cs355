@@ -1,0 +1,56 @@
+:root {
+    --bg-color: #cee;
+    --bg-color2: rgb(111, 236, 149);
+    --txt-color : #333;
+}
+
+:root[theme='dark']{
+    --bg-color: #333;
+    --bg-color2: #555;
+    --txt-color: cyan;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+toggle{
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+toggle:hover{
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+    border: solid 1px var(--txt-color);
+    cursor: pointer;
+}
