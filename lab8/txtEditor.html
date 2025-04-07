@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor - Lab 8</title>
+    <style>
+        *{
+            font-size: 16pt;
+            margin: 0.5em;
+        }
+        button {
+            margin: 5px;
+            padding: 1em;
+            background-color: rgb(53, 12, 91);
+            color: white;
+            border-radius: 5px;
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+        button:hover {
+            background-color: rgb(13, 177, 189);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id = "SaveBtn">Save</button>
+    <button id = "LoadBtn">Load</button>
+    <br>
+    <input type="text" id="fileName" placeholder="File Name">
+    <br>
+    <textarea id="textArea" placeholder="File Content" rows="20" cols="50"></textarea>
+    <br>
+</body>
+
+<script>
+    const saveBtn = document.getElementById('SaveBtn');
+    const loadBtn = document.getElementById('LoadBtn');
+    const fileName = document.getElementById('fileName');
+    const textArea = document.getElementById('textArea');
+
+    loadBtn.addEventListener('click', ()=>{
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = '*.txt, *.md, *.json';
+        fileInput.addEventListener('change', () => {
+            var fr = new FileReader();
+            fr.onload = function() {
+                textArea.value = fr.result;
+            };
+            fr.readAsText(fileInput.files[0]);
+            fileName.value = fileInput.value
+                .split('\\').at(-1)
+                .split('/').at(-1);
+        });
+        fileInput.click();
+    });
+
+    saveBtn.addEventListener('click', async () => {
+        const handle = await showSaveFilePicker({
+            suggestedName: fileName.value,
+        });
+        const stream = await handle.createWritable();
+        await stream.write(textArea.value);
+        await stream.close();
+    })
+
+</script>
+
+
+</html>
